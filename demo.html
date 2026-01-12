@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Démo URGS - Interactive Demo | Renaissance Project</title>
+  <meta name="description" content="Essayez la démo interactive de URGS et observez le suivi émotionnel en temps réel.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <span>/\</span>
+          <span class="nav-logo-i">i</span>
+        </div>
+        <span class="nav-title">Renaissance</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" id="nav-home">Accueil</a>
+        <a href="urgs.html" class="nav-link" id="nav-urgs">URGS</a>
+        <a href="litchi.html" class="nav-link litchi" id="nav-litchi">Litchi</a>
+        <a href="demo.html" class="nav-btn" id="nav-demo">Démo</a>
+        <div class="lang-selector">
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <a href="index.html" id="mobile-nav-home">Accueil</a>
+        <a href="urgs.html" id="mobile-nav-urgs">URGS</a>
+        <a href="litchi.html" id="mobile-nav-litchi">Litchi</a>
+        <a href="demo.html" id="mobile-nav-demo">Démo</a>
+        <div class="lang-selector" style="margin-top: 1rem;">
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container" style="padding: 2rem 1.5rem;">
+      <!-- Demo Header -->
+      <div class="demo-header">
+        <h1 class="demo-title" id="demo-title">Démo Interactive URGS</h1>
+        <p class="demo-subtitle" id="demo-subtitle">Discute avec un assistant propulsé par URGS et observe le suivi relationnel en temps réel</p>
+      </div>
+
+      <!-- Demo Grid -->
+      <div class="demo-grid">
+        <!-- Chat Panel -->
+        <div class="demo-chat">
+          <div class="demo-chat-header">
+            <span class="demo-chat-title" id="demo-conversation">Conversation</span>
+            <span class="demo-mode-badge neutral" id="mode-badge">NEUTRE</span>
+          </div>
+          
+          <div class="demo-messages" id="messages-container">
+            <div class="demo-msg assistant" id="welcome-msg">Salut! Je suis un assistant propulsé par URGS. Essaie de me parler — observe comment mon suivi émotionnel réagit à tes messages!</div>
+          </div>
+          
+          <div class="demo-input-area">
+            <div class="demo-test-buttons">
+              <button class="demo-test-btn" onclick="testMessage('frustrated')" id="test-frustrated">Frustré</button>
+              <button class="demo-test-btn" onclick="testMessage('sad')" id="test-sad">Triste</button>
+              <button class="demo-test-btn" onclick="testMessage('happy')" id="test-happy">Content</button>
+              <button class="demo-test-btn" onclick="testMessage('neutral')" id="test-neutral">Neutre</button>
+            </div>
+            <form class="demo-input-form" onsubmit="handleSubmit(event)">
+              <input type="text" class="demo-input" id="message-input" placeholder="Écris un message...">
+              <button type="submit" class="demo-send-btn" id="send-btn">Envoyer</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- State Panel -->
+        <div class="demo-state">
+          <h3 class="demo-state-title" id="state-title">État URS (RVE)</h3>
+          
+          <div class="demo-meters">
+            <div class="demo-meter">
+              <div class="demo-meter-header">
+                <span class="demo-meter-label" id="label-frustration">Frustration</span>
+                <span id="value-frustration" style="color: var(--green-400);">0%</span>
+              </div>
+              <div class="demo-meter-bar">
+                <div class="demo-meter-fill frustration low" id="bar-frustration" style="width: 0%;"></div>
+              </div>
+            </div>
+            
+            <div class="demo-meter">
+              <div class="demo-meter-header">
+                <span class="demo-meter-label" id="label-trust">Confiance</span>
+                <span id="value-trust" style="color: var(--cyan-400);">50%</span>
+              </div>
+              <div class="demo-meter-bar">
+                <div class="demo-meter-fill trust" id="bar-trust" style="width: 50%;"></div>
+              </div>
+            </div>
+            
+            <div class="demo-meter">
+              <div class="demo-meter-header">
+                <span class="demo-meter-label" id="label-engagement">Engagement</span>
+                <span id="value-engagement" style="color: var(--purple-400);">60%</span>
+              </div>
+              <div class="demo-meter-bar">
+                <div class="demo-meter-fill engagement" id="bar-engagement" style="width: 60%;"></div>
+              </div>
+            </div>
+            
+            <div class="demo-meter">
+              <div class="demo-meter-header">
+                <span class="demo-meter-label" id="label-escalation">Risque d'escalade</span>
+                <span id="value-escalation" style="color: var(--slate-400);">0%</span>
+              </div>
+              <div class="demo-meter-bar">
+                <div class="demo-meter-fill escalation" id="bar-escalation" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-mode-box">
+            <div class="demo-mode-label" id="mode-label">MODE ACTIF</div>
+            <div class="demo-mode-value neutral" id="mode-value">NEUTRE</div>
+          </div>
+
+          <div class="demo-constraints-box">
+            <div class="demo-constraints-label" id="constraints-label">CONTRAINTES UB3</div>
+            <div class="demo-constraint"><span id="constraint-warmth-label">Chaleur</span>: <span id="constraint-warmth">Normal</span></div>
+            <div class="demo-constraint"><span id="constraint-pace-label">Rythme</span>: <span id="constraint-pace">Normal</span></div>
+            <div class="demo-constraint"><span id="constraint-escalation-label">Offrir escalade</span>: <span id="constraint-escalation">Non</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"><span>/\</span></div>
+        <span class="footer-company" id="footer-company">Renaissance AI Systems</span>
+      </div>
+      <p class="footer-copyright" id="footer-copyright">© 2024 Renaissance Project. Construire l'intelligence relationnelle pour l'IA.</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    // Demo State
+    let state = { frustration: 0, trust: 50, engagement: 60, escalationRisk: 0 };
+    let mode = 'NEUTRAL';
+    let isTyping = false;
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+
+    // Analyze input for emotional signals
+    function analyzeInput(text) {
+      const lower = text.toLowerCase();
+      let frustrationDelta = 0, trustDelta = 0, engagementDelta = 5;
+      
+      // Frustration signals
+      if (text === text.toUpperCase() && text.length > 3) frustrationDelta += 25;
+      if (/ridicul|stupid|useless|荒谬|愚蠢/.test(lower)) frustrationDelta += 20;
+      if (/again|already|repeat|encore|déjà|再/.test(lower)) frustrationDelta += 15;
+      if (/angry|frustrat|annoyed|fâché|frustré|愤怒|沮丧/.test(lower)) frustrationDelta += 20;
+      if ((text.match(/!/g) || []).length > 1) frustrationDelta += 10;
+      
+      // Positive signals
+      if (/thank|merci|谢谢/.test(lower)) { frustrationDelta -= 15; trustDelta += 10; }
+      if (/great|perfect|awesome|super|parfait|太好了/.test(lower)) { frustrationDelta -= 10; trustDelta += 5; }
+      
+      // Distress signals
+      if (/sad|lonely|depress|triste|seul|孤独|悲伤/.test(lower)) { frustrationDelta += 5; engagementDelta += 10; }
+      
+      return { frustrationDelta, trustDelta, engagementDelta };
+    }
+
+    // Get mode based on state
+    function getMode(f, e) {
+      if (f > 70 || e > 70) return 'DE-ESCALATION';
+      if (f > 40) return 'EMPATHETIC';
+      if (f < 20) return 'FRIENDLY';
+      return 'NEUTRAL';
+    }
+
+    // Update UI
+    function updateUI() {
+      // Update meters
+      document.getElementById('value-frustration').textContent = Math.round(state.frustration) + '%';
+      document.getElementById('value-trust').textContent = Math.round(state.trust) + '%';
+      document.getElementById('value-engagement').textContent = Math.round(state.engagement) + '%';
+      document.getElementById('value-escalation').textContent = Math.round(state.escalationRisk) + '%';
+      
+      document.getElementById('bar-frustration').style.width = state.frustration + '%';
+      document.getElementById('bar-trust').style.width = state.trust + '%';
+      document.getElementById('bar-engagement').style.width = state.engagement + '%';
+      document.getElementById('bar-escalation').style.width = state.escalationRisk + '%';
+      
+      // Update frustration color
+      const frustBar = document.getElementById('bar-frustration');
+      const frustValue = document.getElementById('value-frustration');
+      if (state.frustration > 60) {
+        frustBar.className = 'demo-meter-fill frustration';
+        frustValue.style.color = 'var(--red-400)';
+      } else if (state.frustration > 30) {
+        frustBar.className = 'demo-meter-fill frustration medium';
+        frustValue.style.color = 'var(--amber-400)';
+      } else {
+        frustBar.className = 'demo-meter-fill frustration low';
+        frustValue.style.color = 'var(--green-400)';
+      }
+      
+      // Update escalation color
+      const escBar = document.getElementById('bar-escalation');
+      const escValue = document.getElementById('value-escalation');
+      if (state.escalationRisk > 50) {
+        escBar.className = 'demo-meter-fill escalation high';
+        escValue.style.color = 'var(--red-400)';
+      } else {
+        escBar.className = 'demo-meter-fill escalation';
+        escValue.style.color = 'var(--slate-400)';
+      }
+      
+      // Update mode
+      const modeValue = document.getElementById('mode-value');
+      const modeBadge = document.getElementById('mode-badge');
+      const modeText = t('demo.modes.' + mode);
+      modeValue.textContent = modeText;
+      modeBadge.textContent = modeText;
+      
+      modeValue.className = 'demo-mode-value ' + mode.toLowerCase().replace('-', '-');
+      modeBadge.className = 'demo-mode-badge ' + mode.toLowerCase().replace('-', '-');
+      
+      // Update constraints
+      const highWarmth = mode === 'DE-ESCALATION' || mode === 'EMPATHETIC';
+      const slowPace = mode === 'DE-ESCALATION';
+      const offerEsc = state.escalationRisk > 50;
+      
+      document.getElementById('constraint-warmth').textContent = highWarmth ? t('demo.values.high') : t('demo.values.normal');
+      document.getElementById('constraint-pace').textContent = slowPace ? t('demo.values.slow') : t('demo.values.normal');
+      document.getElementById('constraint-escalation').textContent = offerEsc ? t('demo.values.yes') : t('demo.values.no');
+    }
+
+    // Add message to chat
+    function addMessage(content, role) {
+      const container = document.getElementById('messages-container');
+      const msg = document.createElement('div');
+      msg.className = 'demo-msg ' + role;
+      msg.textContent = content;
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    // Show typing indicator
+    function showTyping() {
+      const container = document.getElementById('messages-container');
+      const typing = document.createElement('div');
+      typing.className = 'demo-typing';
+      typing.id = 'typing-indicator';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      container.appendChild(typing);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    // Hide typing indicator
+    function hideTyping() {
+      const typing = document.getElementById('typing-indicator');
+      if (typing) typing.remove();
+    }
+
+    // Handle message submission
+    function handleSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('message-input');
+      const text = input.value.trim();
+      if (!text || isTyping) return;
+      
+      // Add user message
+      addMessage(text, 'user');
+      input.value = '';
+      
+      // Analyze and update state
+      const { frustrationDelta, trustDelta, engagementDelta } = analyzeInput(text);
+      
+      isTyping = true;
+      showTyping();
+      
+      setTimeout(() => {
+        // Update state
+        state.frustration = Math.max(0, Math.min(100, state.frustration + frustrationDelta - 5));
+        state.trust = Math.max(0, Math.min(100, state.trust + trustDelta));
+        state.engagement = Math.max(0, Math.min(100, state.engagement + engagementDelta));
+        state.escalationRisk = Math.max(0, Math.min(100, 
+          state.frustration > 50 ? state.frustration * 0.8 : state.escalationRisk - 10
+        ));
+        
+        // Get new mode
+        mode = getMode(state.frustration, state.escalationRisk);
+        
+        // Update UI
+        updateUI();
+        
+        // Add response
+        hideTyping();
+        const response = t('demo.responses.' + mode);
+        addMessage(response, 'assistant');
+        
+        isTyping = false;
+      }, 1000);
+    }
+
+    // Test message buttons
+    function testMessage(type) {
+      const input = document.getElementById('message-input');
+      input.value = t('demo.testMessages.' + type);
+      input.focus();
+    }
+
+    // Update page content for i18n
+    function updateContent() {
+      // Nav
+      document.getElementById('nav-home').textContent = t('nav.home');
+      document.getElementById('nav-urgs').textContent = t('nav.urgs');
+      document.getElementById('nav-litchi').textContent = t('nav.litchi');
+      document.getElementById('nav-demo').textContent = t('nav.demo');
+      document.getElementById('mobile-nav-home').textContent = t('nav.home');
+      document.getElementById('mobile-nav-urgs').textContent = t('nav.urgs');
+      document.getElementById('mobile-nav-litchi').textContent = t('nav.litchi');
+      document.getElementById('mobile-nav-demo').textContent = t('nav.demo');
+      
+      // Demo
+      document.getElementById('demo-title').textContent = t('demo.title');
+      document.getElementById('demo-subtitle').textContent = t('demo.subtitle');
+      document.getElementById('demo-conversation').textContent = t('demo.conversation');
+      document.getElementById('welcome-msg').textContent = t('demo.welcome');
+      document.getElementById('message-input').placeholder = t('demo.placeholder');
+      document.getElementById('send-btn').textContent = t('demo.send');
+      
+      // Test buttons
+      document.getElementById('test-frustrated').textContent = t('demo.tests.frustrated');
+      document.getElementById('test-sad').textContent = t('demo.tests.sad');
+      document.getElementById('test-happy').textContent = t('demo.tests.happy');
+      document.getElementById('test-neutral').textContent = t('demo.tests.neutral');
+      
+      // State panel
+      document.getElementById('state-title').textContent = t('demo.state.title');
+      document.getElementById('label-frustration').textContent = t('demo.state.frustration');
+      document.getElementById('label-trust').textContent = t('demo.state.trust');
+      document.getElementById('label-engagement').textContent = t('demo.state.engagement');
+      document.getElementById('label-escalation').textContent = t('demo.state.escalation');
+      document.getElementById('mode-label').textContent = t('demo.state.mode');
+      document.getElementById('constraints-label').textContent = t('demo.state.constraints');
+      document.getElementById('constraint-warmth-label').textContent = t('demo.state.warmth');
+      document.getElementById('constraint-pace-label').textContent = t('demo.state.pace');
+      document.getElementById('constraint-escalation-label').textContent = t('demo.state.offerEscalation');
+      
+      // Update UI with new translations
+      updateUI();
+      
+      // Footer
+      document.getElementById('footer-company').textContent = t('footer.company');
+      document.getElementById('footer-copyright').textContent = t('footer.copyright');
+    }
+  </script>
+</body>
+</html>

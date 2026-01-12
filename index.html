@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renaissance Project - Intelligence Relationnelle pour l'IA</title>
+  <meta name="description" content="Renaissance développe un middleware qui donne à l'IA l'intelligence émotionnelle pour construire des relations significatives avec les utilisateurs.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <span>/\</span>
+          <span class="nav-logo-i">i</span>
+        </div>
+        <span class="nav-title">Renaissance</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active" id="nav-home">Accueil</a>
+        <a href="urgs.html" class="nav-link" id="nav-urgs">URGS</a>
+        <a href="litchi.html" class="nav-link litchi" id="nav-litchi">Litchi</a>
+        <a href="demo.html" class="nav-btn" id="nav-demo">Démo</a>
+        <div class="lang-selector">
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+      </div>
+      
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    
+    <div class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <a href="index.html" id="mobile-nav-home">Accueil</a>
+        <a href="urgs.html" id="mobile-nav-urgs">URGS</a>
+        <a href="litchi.html" id="mobile-nav-litchi">Litchi</a>
+        <a href="demo.html" id="mobile-nav-demo">Démo</a>
+        <div class="lang-selector" style="margin-top: 1rem;">
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge" id="hero-badge">Construire le futur des relations Humain-IA</div>
+        <h1 class="hero-title">
+          <span id="hero-title1">Intelligence Relationnelle</span><br>
+          <span id="hero-title2">pour les systèmes IA</span>
+        </h1>
+        <p class="hero-subtitle" id="hero-subtitle">Renaissance développe un middleware qui donne à l'IA l'intelligence émotionnelle pour construire des relations significatives, sécuritaires et durables avec les utilisateurs.</p>
+        <div class="hero-buttons">
+          <a href="demo.html" class="btn btn-primary" id="hero-cta1">Essayer la démo URGS</a>
+          <a href="urgs.html" class="btn btn-secondary" id="hero-cta2">En savoir plus</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="cards-section">
+      <div class="container">
+        <h2 class="section-title" id="projects-title">Nos Projets</h2>
+        <p class="section-subtitle" id="projects-subtitle">Deux technologies complémentaires qui apportent l'intelligence émotionnelle aux interactions IA</p>
+        
+        <div class="cards-grid">
+          <!-- URGS Card -->
+          <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3 class="card-title">URGS</h3>
+            <p class="card-tagline" id="urgs-tagline">Universal Relational Governance System</p>
+            <p class="card-description" id="urgs-desc">Middleware qui s'intercale entre les utilisateurs et les LLMs pour fournir une intelligence émotionnelle en temps réel, une gouvernance comportementale et une mémoire relationnelle.</p>
+            <ul class="card-features">
+              <li><span>✓</span> <span id="urgs-f1">Suivi émotionnel en temps réel</span></li>
+              <li><span>✓</span> <span id="urgs-f2">Gouvernance comportementale (UB3)</span></li>
+              <li><span>✓</span> <span id="urgs-f3">Architecture LLM-agnostique</span></li>
+            </ul>
+            <a href="urgs.html" class="card-link" id="urgs-link">En savoir plus →</a>
+          </div>
+
+          <!-- Litchi Card -->
+          <div class="card litchi">
+            <div class="card-icon">🍑</div>
+            <h3 class="card-title">Litchi</h3>
+            <p class="card-tagline" id="litchi-tagline">Assistant Productivité propulsé par IA</p>
+            <p class="card-description" id="litchi-desc">Contrôle tes outils de productivité en langage naturel. Email, calendrier, fichiers, musique, navigation — Google, Microsoft et plus, tout au même endroit.</p>
+            <ul class="card-features">
+              <li><span>✓</span> <span id="litchi-f1">Gmail, Outlook, Drive, OneDrive</span></li>
+              <li><span>✓</span> <span id="litchi-f2">Spotify, Google Maps, Météo</span></li>
+              <li><span>✓</span> <span id="litchi-f3">SMS, Google Home, Rappels</span></li>
+            </ul>
+            <a href="litchi.html" class="card-link" id="litchi-link">En savoir plus →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+      <div class="container">
+        <h2 class="section-title" id="why-title">Pourquoi l'Intelligence Relationnelle?</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon">❌</div>
+            <h3 id="why-problem-title">Le Problème</h3>
+            <p id="why-problem-text">Les LLMs comprennent le langage mais pas la relation. Ils répondent de la même façon à un enfant heureux qu'à un client frustré.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">💡</div>
+            <h3 id="why-solution-title">Notre Solution</h3>
+            <p id="why-solution-text">URS ajoute une couche relationnelle qui suit l'état émotionnel, maintient l'historique de la relation et gouverne le comportement de l'IA en temps réel.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon">✨</div>
+            <h3 id="why-result-title">Le Résultat</h3>
+            <p id="why-result-text">Une IA qui adapte son ton, se souvient de tes patterns, respecte les limites et construit une vraie confiance au fil du temps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"><span>/\</span></div>
+        <span class="footer-company" id="footer-company">Renaissance AI Systems</span>
+      </div>
+      <p class="footer-copyright" id="footer-copyright">© 2024 Renaissance Project. Construire l'intelligence relationnelle pour l'IA.</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+
+    function updateContent() {
+      // Nav
+      document.getElementById('nav-home').textContent = t('nav.home');
+      document.getElementById('nav-urgs').textContent = t('nav.urgs');
+      document.getElementById('nav-litchi').textContent = t('nav.litchi');
+      document.getElementById('nav-demo').textContent = t('nav.demo');
+      document.getElementById('mobile-nav-home').textContent = t('nav.home');
+      document.getElementById('mobile-nav-urgs').textContent = t('nav.urgs');
+      document.getElementById('mobile-nav-litchi').textContent = t('nav.litchi');
+      document.getElementById('mobile-nav-demo').textContent = t('nav.demo');
+      
+      // Hero
+      document.getElementById('hero-badge').textContent = t('hero.badge');
+      document.getElementById('hero-title1').textContent = t('hero.title1');
+      document.getElementById('hero-title2').textContent = t('hero.title2');
+      document.getElementById('hero-subtitle').textContent = t('hero.subtitle');
+      document.getElementById('hero-cta1').textContent = t('hero.cta1');
+      document.getElementById('hero-cta2').textContent = t('hero.cta2');
+      
+      // Projects
+      document.getElementById('projects-title').textContent = t('projects.title');
+      document.getElementById('projects-subtitle').textContent = t('projects.subtitle');
+      document.getElementById('urgs-tagline').textContent = t('projects.urgs.tagline');
+      document.getElementById('urgs-desc').textContent = t('projects.urgs.description');
+      document.getElementById('urgs-f1').textContent = t('projects.urgs.f1');
+      document.getElementById('urgs-f2').textContent = t('projects.urgs.f2');
+      document.getElementById('urgs-f3').textContent = t('projects.urgs.f3');
+      document.getElementById('urgs-link').textContent = t('projects.urgs.link');
+      document.getElementById('litchi-tagline').textContent = t('projects.litchi.tagline');
+      document.getElementById('litchi-desc').textContent = t('projects.litchi.description');
+      document.getElementById('litchi-f1').textContent = t('projects.litchi.f1');
+      document.getElementById('litchi-f2').textContent = t('projects.litchi.f2');
+      document.getElementById('litchi-f3').textContent = t('projects.litchi.f3');
+      document.getElementById('litchi-link').textContent = t('projects.litchi.link');
+      
+      // Why
+      document.getElementById('why-title').textContent = t('why.title');
+      document.getElementById('why-problem-title').textContent = t('why.problem.title');
+      document.getElementById('why-problem-text').textContent = t('why.problem.text');
+      document.getElementById('why-solution-title').textContent = t('why.solution.title');
+      document.getElementById('why-solution-text').textContent = t('why.solution.text');
+      document.getElementById('why-result-title').textContent = t('why.result.title');
+      document.getElementById('why-result-text').textContent = t('why.result.text');
+      
+      // Footer
+      document.getElementById('footer-company').textContent = t('footer.company');
+      document.getElementById('footer-copyright').textContent = t('footer.copyright');
+    }
+  </script>
+</body>
+</html>

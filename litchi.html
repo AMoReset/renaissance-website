@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Litchi - Assistant Productivité IA | Renaissance Project</title>
+  <meta name="description" content="Litchi - Contrôle tes outils de productivité en langage naturel. Email, calendrier, fichiers, musique et plus.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">
+          <span>/\</span>
+          <span class="nav-logo-i">i</span>
+        </div>
+        <span class="nav-title">Renaissance</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link" id="nav-home">Accueil</a>
+        <a href="urgs.html" class="nav-link" id="nav-urgs">URGS</a>
+        <a href="litchi.html" class="nav-link litchi active" id="nav-litchi">Litchi</a>
+        <a href="demo.html" class="nav-btn" id="nav-demo">Démo</a>
+        <div class="lang-selector">
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <div class="container">
+        <a href="index.html" id="mobile-nav-home">Accueil</a>
+        <a href="urgs.html" id="mobile-nav-urgs">URGS</a>
+        <a href="litchi.html" id="mobile-nav-litchi">Litchi</a>
+        <a href="demo.html" id="mobile-nav-demo">Démo</a>
+        <div class="lang-selector" style="margin-top: 1rem;">
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <section class="container">
+      <div class="page-header">
+        <div class="page-header-content">
+          <div class="page-badge amber" id="page-badge">Assistant Productivité</div>
+          <h1 class="page-title"><span id="page-title1">Litchi</span><br><span id="page-title2" style="color: var(--slate-100);">Ton centre de commande IA</span></h1>
+          <p class="page-subtitle" id="page-subtitle">Contrôle tous tes outils de productivité en langage naturel. Email, calendrier, fichiers, musique, navigation — dis ce que tu veux, Litchi s'en occupe.</p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-disabled" id="ios-btn">iOS Bientôt disponible</button>
+            <button class="btn btn-disabled" id="android-btn">Android Bientôt disponible</button>
+          </div>
+        </div>
+        <div class="page-header-visual">
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-header">
+                <div class="phone-header-icon">🍑</div>
+                <div class="phone-header-title">Litchi</div>
+              </div>
+              <div class="phone-messages">
+                <div class="phone-msg user">📧 ✉️ → Marc</div>
+                <div class="phone-msg assistant">✓ Email envoyé!</div>
+                <div class="phone-msg user">🗺️ → Bureau?</div>
+                <div class="phone-msg assistant">25 min via A40 🚗</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="why-section">
+      <div class="container">
+        <h2 class="section-title" id="features-title">Fonctionnalités</h2>
+        <p class="section-subtitle" id="features-subtitle">Dis ce que tu veux, Litchi s'occupe du reste</p>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📧</div>
+            <h3 class="feature-title" id="email-title">Email</h3>
+            <p class="feature-desc" id="email-desc">Lire, envoyer, répondre, transférer, pièces jointes, recherche</p>
+            <div class="feature-tags"><span class="feature-tag">Gmail</span><span class="feature-tag">Outlook</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3 class="feature-title" id="calendar-title">Calendrier</h3>
+            <p class="feature-desc" id="calendar-desc">Voir événements, créer, modifier, supprimer</p>
+            <div class="feature-tags"><span class="feature-tag">Google Calendar</span><span class="feature-tag">Outlook</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">👥</div>
+            <h3 class="feature-title" id="contacts-title">Contacts</h3>
+            <p class="feature-desc" id="contacts-desc">Rechercher, créer des contacts</p>
+            <div class="feature-tags"><span class="feature-tag">Google</span><span class="feature-tag">Microsoft</span><span class="feature-tag">Téléphone</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📁</div>
+            <h3 class="feature-title" id="files-title">Fichiers</h3>
+            <p class="feature-desc" id="files-desc">Lister, rechercher, télécharger, envoyer par email</p>
+            <div class="feature-tags"><span class="feature-tag">Google Drive</span><span class="feature-tag">OneDrive</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3 class="feature-title" id="messages-title">Messages</h3>
+            <p class="feature-desc" id="messages-desc">Envoyer des SMS et iMessage</p>
+            <div class="feature-tags"><span class="feature-tag">httpSMS</span><span class="feature-tag">KDE Connect</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎵</div>
+            <h3 class="feature-title" id="music-title">Musique</h3>
+            <p class="feature-desc" id="music-desc">Play, pause, skip, volume, recherche</p>
+            <div class="feature-tags"><span class="feature-tag" style="background: #166534; color: #4ade80;">Spotify</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3 class="feature-title" id="navigation-title">Navigation</h3>
+            <p class="feature-desc" id="navigation-desc">Itinéraire, ETA, trafic, lieux à proximité</p>
+            <div class="feature-tags"><span class="feature-tag">Google Maps</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⏰</div>
+            <h3 class="feature-title" id="reminders-title">Rappels</h3>
+            <p class="feature-desc" id="reminders-desc">Timers et reminders</p>
+            <div class="feature-tags"><span class="feature-tag">Local</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌤️</div>
+            <h3 class="feature-title" id="weather-title">Météo</h3>
+            <p class="feature-desc" id="weather-desc">Conditions actuelles et prévisions</p>
+            <div class="feature-tags"><span class="feature-tag">OpenWeather</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📰</div>
+            <h3 class="feature-title" id="news-title">Actualités</h3>
+            <p class="feature-desc" id="news-desc">News et headlines</p>
+            <div class="feature-tags"><span class="feature-tag">NewsAPI</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏠</div>
+            <h3 class="feature-title" id="home-title">Maison</h3>
+            <p class="feature-desc" id="home-desc">Cast audio et text-to-speech</p>
+            <div class="feature-tags"><span class="feature-tag">Google Home</span></div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3 class="feature-title" id="memory-title">Mémoire</h3>
+            <p class="feature-desc" id="memory-desc">Recherche dans tes conversations passées</p>
+            <div class="feature-tags"><span class="feature-tag" style="background: #78350f; color: #fbbf24;">Local</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section class="cards-section">
+      <div class="container">
+        <h2 class="section-title" id="platforms-title">Plateformes supportées</h2>
+        <div class="platforms-grid">
+          <div>
+            <div class="platform-icon">🔵</div>
+            <h3 class="platform-title">Google</h3>
+            <p class="platform-desc" id="platform-google">Gmail, Calendar, Drive, Contacts, Maps, Home</p>
+          </div>
+          <div>
+            <div class="platform-icon">🟦</div>
+            <h3 class="platform-title">Microsoft</h3>
+            <p class="platform-desc" id="platform-microsoft">Outlook Mail, Outlook Calendar, OneDrive, Contacts</p>
+          </div>
+          <div>
+            <div class="platform-icon">🟢</div>
+            <h3 class="platform-title">Others</h3>
+            <p class="platform-desc" id="platform-other">Spotify, OpenWeather, NewsAPI, httpSMS, KDE Connect</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="why-section">
+      <div class="container">
+        <h2 class="section-title" id="benefits-title">Conçu pour les gens actifs</h2>
+        <div class="benefits-grid">
+          <div>
+            <div class="benefit-icon">🗣️</div>
+            <h3 class="benefit-title" id="benefit-natural-title">Langage naturel</h3>
+            <p class="benefit-desc" id="benefit-natural-text">Parle comme à un assistant humain. Pas de commandes à apprendre.</p>
+          </div>
+          <div>
+            <div class="benefit-icon">🔗</div>
+            <h3 class="benefit-title" id="benefit-multi-title">Multi-plateforme</h3>
+            <p class="benefit-desc" id="benefit-multi-text">Google, Microsoft, Spotify — tout au même endroit.</p>
+          </div>
+          <div>
+            <div class="benefit-icon">⚡</div>
+            <h3 class="benefit-title" id="benefit-instant-title">Action immédiate</h3>
+            <p class="benefit-desc" id="benefit-instant-text">Litchi exécute instantanément. Plus de switch entre apps.</p>
+          </div>
+          <div>
+            <div class="benefit-icon">🧠</div>
+            <h3 class="benefit-title" id="benefit-memory-title">Mémoire</h3>
+            <p class="benefit-desc" id="benefit-memory-text">Se souvient de tes conversations et préférences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="cards-section">
+      <div class="container">
+        <div class="coming-soon-box">
+          <h3 class="coming-soon-title" id="coming-title">À venir</h3>
+          <div class="coming-soon-tags">
+            <span class="coming-soon-tag">✅ <span id="coming-tasks">Tâches (Todoist, etc.)</span></span>
+            <span class="coming-soon-tag">🍎 <span id="coming-applecal">Apple Calendar</span></span>
+            <span class="coming-soon-tag">🍎 <span id="coming-applerem">Apple Reminders</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <div class="footer-logo-icon"><span>/\</span></div>
+        <span class="footer-company" id="footer-company">Renaissance AI Systems</span>
+      </div>
+      <p class="footer-copyright" id="footer-copyright">© 2024 Renaissance Project. Construire l'intelligence relationnelle pour l'IA.</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+
+    function updateContent() {
+      // Nav
+      document.getElementById('nav-home').textContent = t('nav.home');
+      document.getElementById('nav-urgs').textContent = t('nav.urgs');
+      document.getElementById('nav-litchi').textContent = t('nav.litchi');
+      document.getElementById('nav-demo').textContent = t('nav.demo');
+      document.getElementById('mobile-nav-home').textContent = t('nav.home');
+      document.getElementById('mobile-nav-urgs').textContent = t('nav.urgs');
+      document.getElementById('mobile-nav-litchi').textContent = t('nav.litchi');
+      document.getElementById('mobile-nav-demo').textContent = t('nav.demo');
+      
+      // Page Header
+      document.getElementById('page-badge').textContent = t('litchiPage.badge');
+      document.getElementById('page-title1').textContent = t('litchiPage.title1');
+      document.getElementById('page-title2').textContent = t('litchiPage.title2');
+      document.getElementById('page-subtitle').textContent = t('litchiPage.subtitle');
+      document.getElementById('ios-btn').textContent = t('litchiPage.iosBtn');
+      document.getElementById('android-btn').textContent = t('litchiPage.androidBtn');
+      
+      // Features
+      document.getElementById('features-title').textContent = t('litchiPage.features.title');
+      document.getElementById('features-subtitle').textContent = t('litchiPage.features.subtitle');
+      
+      const features = ['email', 'calendar', 'contacts', 'files', 'messages', 'music', 'navigation', 'reminders', 'weather', 'news', 'home', 'memory'];
+      features.forEach(f => {
+        document.getElementById(f + '-title').textContent = t('litchiPage.features.' + f + '.title');
+        document.getElementById(f + '-desc').textContent = t('litchiPage.features.' + f + '.desc');
+      });
+      
+      // Platforms
+      document.getElementById('platforms-title').textContent = t('litchiPage.platforms.title');
+      document.getElementById('platform-google').textContent = t('litchiPage.platforms.google');
+      document.getElementById('platform-microsoft').textContent = t('litchiPage.platforms.microsoft');
+      document.getElementById('platform-other').textContent = t('litchiPage.platforms.other');
+      
+      // Benefits
+      document.getElementById('benefits-title').textContent = t('litchiPage.benefits.title');
+      document.getElementById('benefit-natural-title').textContent = t('litchiPage.benefits.natural.title');
+      document.getElementById('benefit-natural-text').textContent = t('litchiPage.benefits.natural.text');
+      document.getElementById('benefit-multi-title').textContent = t('litchiPage.benefits.multi.title');
+      document.getElementById('benefit-multi-text').textContent = t('litchiPage.benefits.multi.text');
+      document.getElementById('benefit-instant-title').textContent = t('litchiPage.benefits.instant.title');
+      document.getElementById('benefit-instant-text').textContent = t('litchiPage.benefits.instant.text');
+      document.getElementById('benefit-memory-title').textContent = t('litchiPage.benefits.memory.title');
+      document.getElementById('benefit-memory-text').textContent = t('litchiPage.benefits.memory.text');
+      
+      // Coming Soon
+      document.getElementById('coming-title').textContent = t('litchiPage.coming.title');
+      document.getElementById('coming-tasks').textContent = t('litchiPage.coming.tasks');
+      document.getElementById('coming-applecal').textContent = t('litchiPage.coming.appleCal');
+      document.getElementById('coming-applerem').textContent = t('litchiPage.coming.appleRem');
+      
+      // Footer
+      document.getElementById('footer-company').textContent = t('footer.company');
+      document.getElementById('footer-copyright').textContent = t('footer.copyright');
+    }
+  </script>
+</body>
+</html>
