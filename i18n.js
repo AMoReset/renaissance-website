@@ -66,8 +66,7 @@ const translations = {
       title1: "Litchi",
       title2: "Ton centre de commande IA",
       subtitle: "Contrôle tous tes outils de productivité en langage naturel. Email, calendrier, fichiers, musique, navigation — dis ce que tu veux, Litchi s'en occupe.",
-      iosBtn: "iOS Bientôt disponible",
-      androidBtn: "Android Bientôt disponible",
+      demoBtn: "Essayer la démo",
       features: {
         title: "Fonctionnalités",
         subtitle: "Dis ce que tu veux, Litchi s'occupe du reste",
@@ -185,8 +184,7 @@ const translations = {
       title1: "Litchi",
       title2: "Your AI Command Center",
       subtitle: "Control all your productivity tools with natural language. Email, calendar, files, music, navigation — just say what you need, Litchi handles the rest.",
-      iosBtn: "iOS Coming Soon",
-      androidBtn: "Android Coming Soon",
+      demoBtn: "Try the Demo",
       features: {
         title: "Features",
         subtitle: "Just tell Litchi what you need",
@@ -303,8 +301,7 @@ const translations = {
       title1: "荔枝",
       title2: "您的AI指挥中心",
       subtitle: "用自然语言控制所有生产力工具。邮件、日历、文件、音乐、导航——说出您需要的，荔枝为您处理。",
-      iosBtn: "iOS即将推出",
-      androidBtn: "Android即将推出",
+      demoBtn: "试用演示",
       features: {
         title: "功能",
         subtitle: "告诉荔枝您需要什么",

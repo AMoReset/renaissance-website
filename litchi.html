@@ -22,7 +22,6 @@
         <a href="index.html" class="nav-link" id="nav-home">Accueil</a>
         <a href="urgs.html" class="nav-link" id="nav-urgs">URGS</a>
         <a href="litchi.html" class="nav-link litchi active" id="nav-litchi">Litchi</a>
-        <a href="https://urgs.renaissanceproject.ca" class="nav-btn" id="nav-demo">Démo</a>
         <div class="lang-selector">
           <button class="lang-btn" data-lang="fr">FR</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -38,7 +37,6 @@
         <a href="index.html" id="mobile-nav-home">Accueil</a>
         <a href="urgs.html" id="mobile-nav-urgs">URGS</a>
         <a href="litchi.html" id="mobile-nav-litchi">Litchi</a>
-        <a href="https://urgs.renaissanceproject.ca" id="mobile-nav-demo">Démo</a>
         <div class="lang-selector" style="margin-top: 1rem;">
           <button class="lang-btn" data-lang="fr">FR</button>
           <button class="lang-btn" data-lang="en">EN</button>
@@ -57,8 +55,7 @@
           <h1 class="page-title"><span id="page-title1">Litchi</span><br><span id="page-title2" style="color: var(--slate-100);">Ton centre de commande IA</span></h1>
           <p class="page-subtitle" id="page-subtitle">Contrôle tous tes outils de productivité en langage naturel. Email, calendrier, fichiers, musique, navigation — dis ce que tu veux, Litchi s'en occupe.</p>
           <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-disabled" id="ios-btn">iOS Bientôt disponible</button>
-            <button class="btn btn-disabled" id="android-btn">Android Bientôt disponible</button>
+            <a href="https://litchi.renaissanceproject.ca" class="btn btn-primary" id="demo-btn">Essayer la démo</a>
           </div>
         </div>
         <div class="page-header-visual">
@@ -253,19 +250,16 @@
       document.getElementById('nav-home').textContent = t('nav.home');
       document.getElementById('nav-urgs').textContent = t('nav.urgs');
       document.getElementById('nav-litchi').textContent = t('nav.litchi');
-      document.getElementById('nav-demo').textContent = t('nav.demo');
       document.getElementById('mobile-nav-home').textContent = t('nav.home');
       document.getElementById('mobile-nav-urgs').textContent = t('nav.urgs');
       document.getElementById('mobile-nav-litchi').textContent = t('nav.litchi');
-      document.getElementById('mobile-nav-demo').textContent = t('nav.demo');
       
       // Page Header
       document.getElementById('page-badge').textContent = t('litchiPage.badge');
       document.getElementById('page-title1').textContent = t('litchiPage.title1');
       document.getElementById('page-title2').textContent = t('litchiPage.title2');
       document.getElementById('page-subtitle').textContent = t('litchiPage.subtitle');
-      document.getElementById('ios-btn').textContent = t('litchiPage.iosBtn');
-      document.getElementById('android-btn').textContent = t('litchiPage.androidBtn');
+      document.getElementById('demo-btn').textContent = t('litchiPage.demoBtn');
       
       // Features
       document.getElementById('features-title').textContent = t('litchiPage.features.title');
